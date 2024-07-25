@@ -1,7 +1,7 @@
-Step1:
+*Step1:*
 if he asks to create a http service
-
 I will create it in the main.go file
+
 router := gin.New()
 router.GET("/id", func(c *gin.Context) {
 			c.JSON(200, gin.H{
@@ -10,9 +10,8 @@ router.GET("/id", func(c *gin.Context) {
 		})
 
 
-Step2:
+*Step2:*
 If he asks for grpc service 
-then will have to floow instruction the grpc-service ReadMe.md
 
 i.e first create a <file_name>.proto
 syntax = "proto3";
@@ -41,6 +40,7 @@ service Currency {
 }
 
 
+*Step3:*
 create Makefile
 // i wont remember this command for sure
 gen:
@@ -54,7 +54,7 @@ gen:
  make gen  
 
 
- Step 4:
+* Step 4:*
  Come back to main.go 
  	lis, err := net.Listen("tcp", ":9000")
 		if err != nil {
@@ -69,7 +69,7 @@ gen:
         }
 
 
-Step 5:
+*Step 5:*
 wg := sync.WaitGroup{}
 wg.Add(1)
 	go func() {
@@ -88,7 +88,7 @@ wg.Add(1)
 	}()
 
 
-Step 6:
+*Step 6:*
     wg.Add(1)
 	go func() {
 		router.GET("/id", func(c *gin.Context) {
