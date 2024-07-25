@@ -54,6 +54,7 @@ func main() {
 					"data": "message",
 				})
 			}
+			defer conn.Close()
 
 			grpcClient := invoicer.NewCurrencyClient(conn)
 			response, err := grpcClient.Create(context.Background(), &invoicer.CreateRequest{
