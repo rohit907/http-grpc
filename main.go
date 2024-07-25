@@ -78,7 +78,7 @@ func main() {
 		})
 		router.GET("/id", func(c *gin.Context) {
 			c.JSON(200, gin.H{
-				"id": "endpoint",
+				"id": "http endpoint",
 			})
 		})
 
